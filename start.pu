@@ -1,0 +1,29 @@
+@startuml
+!include skin.iuml
+title Starting with git\n
+start
+
+:navigate to ""https://github.com/organisation-name"";
+if (existing repository?) then (yes)
+	:navigate to the repository;
+	if (allowed to directly edit the repository?) then (no)
+		:click the ""Fork"" button;
+	endif
+else (no)
+	:create a new repository;
+	:enter repository name in only lower case letters and hyphens;
+	:add a description, starting with an upper case letter,
+do not use any without punctuation;
+	:choose to initalize a README;
+	:choose a license, e.g. ""Apache License 2.0"";
+	:click ""Create repository"" button;
+endif
+:click the ""Clone or download"" button;
+:click the copy icon to copy the URL;
+:go to a terminal to your workspace or projects directory;
+:enter ""git clone"" and paste the URL (e.g. Ctrl+Shift+C);
+:change into the directory named after the repository;
+:start working;
+
+stop
+@enduml
